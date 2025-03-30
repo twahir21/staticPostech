@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PosTech</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    #bee-model{
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      pointer-events: none;
+      z-index: 100;
+      transition: transform 1s ease-out;
+    }
+
+    .getLeft{
+      transform: translateX(25%);
+    }
+
+    @media (max-width: 768px){
+      #bee-model{
+        width: 70%;
+        height: 100%;
+      }
+
+      .getLeft{
+        transform: translateX(100%);
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Header Navigation -->
+  <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+    <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <a href="/" class="text-xl sm:text-2xl md:text-2xl font-bold text-gray-900">PosTech</a>
+      <ul class="hidden md:flex space-x-6">
+        <li><a href="#hero" class="hover:text-gray-900 transition text-sm sm:text-base md:text-base">Nyumbani</a></li>
+        <li><a href="#about" class="hover:text-gray-900 transition text-sm sm:text-base md:text-base">Kuhusu</a></li>
+        <li><a href="#features" class="hover:text-gray-900 transition text-sm sm:text-base md:text-base">Kwa Nini Sisi?</a></li>
+        <li><a href="#contact" class="hover:text-gray-900 transition text-sm sm:text-base md:text-base">Wasiliana</a></li>
+      </ul>
+      <div class="space-x-4">
+        <a href="/login" class="border border-gray-900 px-4 py-2 rounded-md hover:bg-gray-900 hover:text-white transition text-sm sm:text-base md:text-base">Ingia</a>
+        <a href="/register" class="bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition text-sm sm:text-base md:text-base">Anza Kutumia</a>
+      </div>
+    </nav>
+  </header>
+
+  <model-viewer src="money.glb" id="bee-model" camera-orbit="45deg 45deg" autoplay class="getLeft"></model-viewer>
+
+  <!-- Hero Section -->
+  <section id="hero" class="flex items-center min-h-screen px-6 max-w-6xl mx-auto pt-20">
+    <div class="w-full md:w-1/2">
+      <h1 class="text-2xl sm:text-3xl md:text-3xl font-bold mb-4">Boresha Biashara Yako na PosTech</h1>
+      <p class="text-sm sm:text-base md:text-base text-gray-600 mb-6">
+        Mfumo wa kisasa wa POS ulio na uwezo wa kuboresha na kurahisisha mauzo kwa ku scan special QR Codes hivyo kufanya mahesabu ya biashara kiotomatiki.
+      </p>
+      <div class="flex space-x-4">
+        <a href="/register" class="bg-gray-900 text-white px-6 py-3 rounded-lg shadow-md hover:bg-gray-800 transition text-sm sm:text-base md:text-base">Anza Kutumia</a>
+        <a href="/login" class="border border-gray-900 px-6 py-3 rounded-lg shadow-md hover:bg-gray-900 hover:text-white transition text-sm sm:text-base md:text-base">Ingia</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="flex items-center min-h-screen px-6 max-w-6xl mx-auto bg-gray-300">
+    <div class="w-full md:w-1/2 ml-auto text-right">
+      <h2 class="text-2xl sm:text-3xl md:text-3xl font-bold mb-4">Kuhusu PosTech</h2>
+      <p class="text-sm sm:text-base md:text-base text-gray-600">
+        PosTech ni mfumo wa kisasa wa Point-of-Sale uliotengenezwa ili kurahisisha shughuli za biashara hasa mauzo na utunzaji wa taarifa za kibiashara. 
+        Kwa uchanganuzi wa faida, usimamizi wa mauzo na manunuzi, na shughuli zisizo na mashaka, tunawasaidia wajasiriamali kufanikiwa.
+      </p>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="features" class="min-h-screen bg-white flex flex-col items-center justify-center py-20 px-6">
+    <h2 class="text-2xl sm:text-3xl md:text-3xl font-bold text-center mb-12">Kwa Nini PosTech?</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <!-- Left Column -->
+      <div class="flex flex-col space-y-6">
+        <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl md:text-xl font-semibold mb-2">📊 Uchambuzi Imara</h3>
+          <p class="text-gray-600">Pata uchanganuzi wa wakati halisi kuhusu mauzo na orodha zako.</p>
+        </div>
+        <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl md:text-xl font-semibold mb-2">💰 Usimamizi wa Mauzo na Gharama</h3>
+          <p class="text-gray-600">Fuata kila shughuli kwa urahisi.</p>
+        </div>
+      </div>
+
+      <!-- Empty Middle Column -->
+      <div></div>
+
+      <!-- Right Column -->
+      <div class="flex flex-col space-y-6">
+        <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl md:text-xl font-semibold mb-2">📦 Usimamizi wa Orodha</h3>
+          <p class="text-gray-600">Hatutakosa bidhaa tena.</p>
+        </div>
+        <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+          <h3 class="text-lg sm:text-xl md:text-xl font-semibold mb-2">⚡ Haraka na Salama</h3>
+          <p class="text-gray-600">Imebuniwa kwa utendaji bora na usalama.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="min-h-screen flex flex-col items-center justify-center bg-gray-100 py-20 px-6">
+    <h2 class="text-2xl sm:text-3xl md:text-3xl font-bold text-center mb-6">Wasiliana Nasi</h2>
+    <p class="text-sm sm:text-base md:text-base text-gray-600 text-center max-w-2xl mb-8">
+      Una maswali? Wasiliana nasi, tutafurahi kukusaidia.
+    </p>
+    <form class="w-full max-w-lg bg-white p-6 rounded-lg shadow-md">
+      <div class="mb-4">
+        <label class="block text-gray-700 font-semibold mb-2">Jina</label>
+        <input type="text" class="w-full p-3 border rounded-md" placeholder="Jina Lako" />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 font-semibold mb-2">Barua Pepe</label>
+        <input type="email" class="w-full p-3 border rounded-md" placeholder="Barua Pepe Yako" />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 font-semibold mb-2">Ujumbe</label>
+        <textarea class="w-full p-3 border rounded-md" rows="4" placeholder="Ujumbe Wako"></textarea>
+      </div>
+      <button class="bg-gray-900 text-white px-6 py-3 rounded-md hover:bg-gray-800 transition w-full">
+        Tuma Ujumbe
+      </button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6">
+    <p>© <script>document.write(new Date().getFullYear())</script> PosTech. Haki Zote Zimehifadhiwa.</p>
+  </footer>
+
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
