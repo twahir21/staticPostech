@@ -18,7 +18,26 @@ function toggleTheme() {
   }
 }
 
+// Toggle the mobile menu
 function toggleMobileMenu() {
-  const menu = document.getElementById('mobileMenu');
-  menu.classList.toggle('hidden');
-}
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("hidden");
+  }
+  
+  // Close the mobile menu when clicking outside
+  function closeMenuOnOutsideClick(event) {
+    const menu = document.getElementById("mobileMenu");
+    const menuButton = document.querySelector('button[onclick="toggleMobileMenu()"]'); // Mobile menu button
+    if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+      menu.classList.add("hidden");
+    }
+  }
+  
+  // Add event listener for clicks outside the mobile menu
+  document.addEventListener("click", closeMenuOnOutsideClick);
+  
+  // Prevent click event from closing the menu when clicking inside the menu or the menu button
+  document.getElementById("mobileMenu").addEventListener("click", function(event) {
+    event.stopPropagation();
+  });
+  
