@@ -1,0 +1,25 @@
+#bee-model{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    z-index: 100;
+    transition: transform 1s ease-out;
+  }
+
+  .getLeft{
+    transform: translateX(25%);
+  }
+
+
+
+  @media (max-width: 768px){
+    #bee-model{
+      width: 70%;
+      height: 100%;
+    }
+
+    .getLeft{
+      transform: translateX(100%);
+    }
+  }

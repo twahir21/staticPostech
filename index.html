@@ -4,74 +4,95 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Streamline your business operations with a smart POS system featuring advanced QR code functionality. Boost efficiency, enhance customer experience, and grow your business today!">
+  <meta property="og:title" content="PosTech - Mfumo wa Biashara">
+  <meta property="og:description" content="Boresha biashara yako kwa kutumia mfumo wa POS wa kisasa unaotumia QR Codes.">
+  <meta property="og:image" content="/path-to-thumbnail.png">
+  <meta property="og:url" content="https://mypostech.store">
+
+  <script src="https://cdn.tailwindcss.com"></script>
   <title>PosTech</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    #bee-model{
-      position: fixed;
-      height: 100%;
-      width: 100%;
-      pointer-events: none;
-      z-index: 100;
-      transition: transform 1s ease-out;
-    }
 
-    .getLeft{
-      transform: translateX(25%);
-    }
+  <script src="/JavaScript/tailwind.js"></script>
 
-    @media (max-width: 768px){
-      #bee-model{
-        width: 70%;
-        height: 100%;
-      }
+  <link rel="stylesheet" href="/assets/style.css">
 
-      .getLeft{
-        transform: translateX(100%);
-      }
-    }
-  </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
 
-  <!-- Header Navigation -->
-  <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-    <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
-      <a href="/" class="text-xl sm:text-2xl md:text-2xl font-bold text-gray-900">PosTech</a>
-      <ul class="hidden md:flex space-x-6">
-        <li><a href="#hero" class="hover:text-gray-900 transition text-sm sm:text-base md:text-base">Nyumbani</a></li>
-        <li><a href="#about" class="hover:text-gray-900 transition text-sm sm:text-base md:text-base">Kuhusu</a></li>
-        <li><a href="#features" class="hover:text-gray-900 transition text-sm sm:text-base md:text-base">Kwa Nini Sisi?</a></li>
-        <li><a href="#contact" class="hover:text-gray-900 transition text-sm sm:text-base md:text-base">Wasiliana</a></li>
-      </ul>
-      <div class="space-x-4">
-        <a href='http://localhost:5173/auth?reg="false"' class="border border-gray-900 px-4 py-2 rounded-md hover:bg-gray-900 hover:text-white transition text-sm sm:text-base md:text-base">Ingia</a>
-        <a href='http://localhost:5173/auth?reg=true' class="bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition text-sm sm:text-base md:text-base">Anza Kutumia</a>
-      </div>
-    </nav>
-  </header>
+<!-- Header Navigation -->
+<header class="fixed top-0 left-0 w-full bg-white dark:bg-gray-700 shadow-md z-50">
+  <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
+    <!-- Brand -->
+    <a href="/" class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100">PosTech</a>
 
-  <model-viewer src="money.glb" id="bee-model" camera-orbit="45deg 45deg" autoplay class="getLeft"></model-viewer>
+    <!-- Desktop Navigation -->
+    <ul class="hidden md:flex space-x-6">
+      <li><a href="#hero" class="hover:text-gray-700 dark:hover:text-gray-300 text-sm sm:text-base dark:text-gray-200">Nyumbani</a></li>
+      <li><a href="#about" class="hover:text-gray-700 dark:hover:text-gray-300 text-sm sm:text-base dark:text-gray-200">Kuhusu</a></li>
+      <li><a href="#features" class="hover:text-gray-700 dark:hover:text-gray-300 text-sm sm:text-base dark:text-gray-200">Kwa Nini Sisi?</a></li>
+      <li><a href="#contact" class="hover:text-gray-700 dark:hover:text-gray-300 text-sm sm:text-base dark:text-gray-200">Wasiliana</a></li>
+    </ul>
 
-  <!-- Hero Section -->
-  <section id="hero" class="flex items-center min-h-screen px-6 max-w-6xl mx-auto pt-20">
-    <div class="w-full md:w-1/2">
-      <h1 class="text-2xl sm:text-3xl md:text-3xl font-bold mb-4">Boresha Biashara Yako na PosTech</h1>
-      <p class="text-sm sm:text-base md:text-base text-gray-600 mb-6">
-        Mfumo wa kisasa wa POS ulio na uwezo wa kuboresha na kurahisisha mauzo kwa ku scan special QR Codes hivyo kufanya mahesabu ya biashara kiotomatiki.
-      </p>
-      <div class="flex space-x-4">
-        <a href= 'http://localhost:5173/auth?reg=true' class="bg-gray-900 text-white px-6 py-3 rounded-lg shadow-md hover:bg-gray-800 transition text-sm sm:text-base md:text-base">Anza Kutumia</a>
-        <a href= 'http://localhost:5173/auth?reg=false' class="border border-gray-900 px-6 py-3 rounded-lg shadow-md hover:bg-gray-900 hover:text-white transition text-sm sm:text-base md:text-base">Ingia</a>
-      </div>
+    <!-- Dark Mode Toggle -->
+    <button onclick="toggleTheme()"
+      class="hidden md:flex items-center gap-2 px-4 py-2 rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-lg hover:brightness-110 active:scale-95 transition duration-300">
+      <svg id="theme-icon" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path id="icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M12 3v1m0 16v1m8.66-8.66l-.71.71M4.34 4.34l-.71.71M21 12h-1M4 12H3m16.66 4.66l-.71-.71M4.34 19.66l-.71-.71M12 5a7 7 0 100 14 7 7 0 000-14z" />
+      </svg>
+      <span>Badili</span>
+    </button>
+
+    <!-- Mobile Menu Button -->
+    <button onclick="toggleMobileMenu()" class="md:hidden text-gray-900 dark:text-white focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-gray-800 p-4 space-y-3">
+    <a href="#hero" class="block text-gray-800 dark:text-gray-200 hover:text-indigo-500">Nyumbani</a>
+    <a href="#about" class="block text-gray-800 dark:text-gray-200 hover:text-indigo-500">Kuhusu</a>
+    <a href="#features" class="block text-gray-800 dark:text-gray-200 hover:text-indigo-500">Kwa Nini Sisi?</a>
+    <a href="#contact" class="block text-gray-800 dark:text-gray-200 hover:text-indigo-500">Wasiliana</a>
+    <div class="flex gap-3 mt-3">
+      <a href='http://localhost:5173/auth?reg="false"' class="w-full border border-gray-900 text-center px-4 py-2 rounded-md hover:bg-gray-900 hover:text-white transition">Ingia</a>
+      <a href='http://localhost:5173/auth?reg=true' class="w-full bg-gray-900 text-white text-center px-4 py-2 rounded-md hover:bg-gray-800 transition">Anza</a>
     </div>
-  </section>
+    <button onclick="toggleTheme()"
+      class="w-full mt-2 flex justify-center items-center gap-2 px-4 py-2 rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-lg hover:brightness-110 active:scale-95 transition duration-300">
+      <svg id="theme-icon-mobile" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path id="icon-path-mobile" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M12 3v1m0 16v1m8.66-8.66l-.71.71M4.34 4.34l-.71.71M21 12h-1M4 12H3m16.66 4.66l-.71-.71M4.34 19.66l-.71-.71M12 5a7 7 0 100 14 7 7 0 000-14z" />
+      </svg>
+      <span>Badili</span>
+    </button>
+  </div>
+</header>
 
-  <!-- About Us Section -->
-  <section id="about" class="flex items-center min-h-screen px-6 max-w-6xl mx-auto bg-gray-300">
+  <model-viewer src="assets/money.glb" id="bee-model" camera-orbit="45deg 45deg" class="getLeft"></model-viewer>
+
+    <!-- Hero Section -->
+    <section id="hero" class="flex items-center min-h-screen px-6 max-w-6xl mx-auto pt-20">
+      <div class="w-full md:w-1/2">
+        <h1 class="text-2xl sm:text-3xl md:text-3xl font-bold mb-4">Boresha Biashara Yako na PosTech</h1>
+        <p class="text-sm sm:text-base md:text-base text-gray-600 mb-6 dark:text-gray-400">
+          Mfumo wa kisasa wa POS ulio na uwezo wa kuboresha na kurahisisha mauzo kwa ku scan special QR Codes hivyo kufanya mahesabu ya biashara kiotomatiki.
+        </p>
+        <div class="flex space-x-4">
+          <a href= 'http://localhost:5173/auth?reg=true' class="bg-gray-900 dark:bg-gray-700 text-white px-6 py-3 rounded-lg shadow-md hover:bg-gray-800 transition text-sm sm:text-base md:text-base">Anza Kutumia</a>
+          <a href= 'http://localhost:5173/auth?reg=false' class="border border-gray-900 dark:border-gray-100 px-6 py-3 rounded-lg shadow-md hover:bg-gray-900 hover:text-white transition text-sm sm:text-base md:text-base">Ingia</a>
+        </div>
+      </div>
+    </section>
+
+      <!-- About Us Section -->
+  <section id="about" class="flex items-center min-h-screen px-6 min-w-screen mx-auto bg-gray-300 dark:bg-gray-600">
     <div class="w-full md:w-1/2 ml-auto text-right">
       <h2 class="text-2xl sm:text-3xl md:text-3xl font-bold mb-4">Kuhusu PosTech</h2>
-      <p class="text-sm sm:text-base md:text-base text-gray-600">
+      <p class="text-sm sm:text-base md:text-base text-gray-600 dark:text-gray-300">
         PosTech ni mfumo wa kisasa wa Point-of-Sale uliotengenezwa ili kurahisisha shughuli za biashara hasa mauzo na utunzaji wa taarifa za kibiashara kwa kufanya
         uchanganuzi wa faida, usimamizi wa mauzo na manunuzi, na shughuli zisizo na mashaka, tunawasaidia wajasiriamali kufanikiwa.
       </p>
@@ -79,19 +100,19 @@
   </section>
 
   <!-- Why Choose Us -->
-  <section id="features" class="min-h-screen bg-white flex flex-col items-center justify-center py-20 px-6">
+  <section id="features" class="min-h-screen bg-white flex flex-col items-center justify-center py-20 px-6 dark:bg-gray-800">
     <h2 class="text-2xl sm:text-3xl md:text-3xl font-bold text-center mb-12">Kwa Nini PosTech?</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
       <!-- Left Column -->
       <div class="flex flex-col space-y-6">
-        <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+        <div class="p-6 bg-gray-50 dark:bg-gray-600 rounded-lg shadow-md">
           <h3 class="text-lg sm:text-xl md:text-xl font-semibold mb-2">📊 Uchambuzi Imara</h3>
-          <p class="text-gray-600">Pata uchanganuzi wa wakati halisi kuhusu mauzo na orodha zako.</p>
+          <p class="text-gray-600 dark:text-gray-300">Pata uchanganuzi wa wakati halisi kuhusu mauzo na orodha zako.</p>
         </div>
-        <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+        <div class="p-6 bg-gray-50 dark:bg-gray-600 rounded-lg shadow-md">
           <h3 class="text-lg sm:text-xl md:text-xl font-semibold mb-2">💰 Usimamizi wa Mauzo na Gharama</h3>
-          <p class="text-gray-600">Fuata kila shughuli kwa urahisi.</p>
+          <p class="text-gray-600 dark:text-gray-300">Fuata kila shughuli kwa urahisi.</p>
         </div>
       </div>
 
@@ -100,96 +121,57 @@
 
       <!-- Right Column -->
       <div class="flex flex-col space-y-6">
-        <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+        <div class="p-6 bg-gray-50 dark:bg-gray-600 rounded-lg shadow-md">
           <h3 class="text-lg sm:text-xl md:text-xl font-semibold mb-2">📦 Usimamizi wa Orodha</h3>
-          <p class="text-gray-600">Hatutakosa bidhaa tena.</p>
+          <p class="text-gray-600 dark:text-gray-300">Hatutakosa bidhaa tena.</p>
         </div>
-        <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+        <div class="p-6 bg-gray-50 dark:bg-gray-600 rounded-lg shadow-md">
           <h3 class="text-lg sm:text-xl md:text-xl font-semibold mb-2">⚡ Haraka na Salama</h3>
-          <p class="text-gray-600">Imebuniwa kwa utendaji bora na usalama.</p>
+          <p class="text-gray-600 dark:text-gray-300">Imebuniwa kwa utendaji bora na usalama.</p>
         </div>
       </div>
     </div>
   </section>
 
 <!-- Contact Section -->
-<section id="contact" class="min-h-screen flex flex-col items-center justify-center bg-gray-100 py-20 px-6">
+<section id="contact" class="min-h-screen flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-900 py-20 px-6">
   <h2 class="text-2xl sm:text-3xl md:text-3xl font-bold text-center mb-6">Wasiliana Nasi</h2>
-  <p class="text-sm sm:text-base md:text-base text-gray-600 text-center max-w-2xl mb-8">
+  <p class="text-sm sm:text-base md:text-base text-gray-600 dark:text-gray-400 text-center max-w-2xl mb-8">
     Una maswali? Wasiliana nasi, tutafurahi kukusaidia.
   </p>
-  <form id="contactForm" class="w-full max-w-lg bg-white p-6 rounded-lg shadow-md">
+  <form id="contactForm" class="w-full max-w-lg bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
     <div class="mb-4">
-      <label class="block text-gray-700 font-semibold mb-2">Jina</label>
-      <input id="name" type="text" class="w-full p-3 border rounded-md" placeholder="Jina Lako" required />
+      <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Jina</label>
+      <input id="name" type="text" class="w-full p-3 border rounded-md dark:bg-gray-500" placeholder="Jina Lako" required />
     </div>
     <div class="mb-4">
-      <label class="block text-gray-700 font-semibold mb-2">Barua Pepe</label>
-      <input id="email" type="email" class="w-full p-3 border rounded-md" placeholder="Barua Pepe Yako (email)" required />
+      <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Barua Pepe</label>
+      <input id="email" type="email" class="w-full p-3 border rounded-md dark:bg-gray-500" placeholder="Barua Pepe Yako (email)" required />
     </div>
     <div class="mb-4">
-      <label class="block text-gray-700 font-semibold mb-2">Ujumbe</label>
-      <textarea id="message" class="w-full p-3 border rounded-md" rows="4" placeholder="Ujumbe Wako" required></textarea>
+      <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Ujumbe</label>
+      <textarea id="message" class="w-full p-3 border rounded-md dark:bg-gray-500" rows="4" placeholder="Ujumbe Wako" required></textarea>
     </div>
     <button id="submitBtn" type="submit" class="bg-gray-900 text-white px-6 py-3 rounded-md hover:bg-gray-800 transition w-full">
       Tuma Ujumbe
     </button>
   </form>
 </section>
+  
+
 
 <!-- SweetAlert2 CDN -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-  document.getElementById('contactForm').addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-    const submitBtn = document.getElementById('submitBtn');
-
-    if (!name || !email || !message) {
-      Swal.fire('Error', 'Tafadhali jaza sehemu zote!', 'error');
-      return;
-    }
-
-    // Change button to loading state
-    submitBtn.textContent = 'Inashughulikiwa...';
-    submitBtn.disabled = true;
-
-    try {
-      const response = await fetch('http://localhost:3000/sendMail', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, message }),
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
-        Swal.fire('Imetumwa!', result.message, 'success');
-        document.getElementById('contactForm').reset();
-      } else {
-        throw new Error(result.message || 'Tatizo limejitokeza, tafadhali jaribu tena!');
-      }
-    } catch (error) {
-      Swal.fire('Error', error.message, 'error');
-    } finally {
-      // Restore button state
-      submitBtn.textContent = 'Tuma Ujumbe';
-      submitBtn.disabled = false;
-    }
-  });
-</script>
-
 
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white text-center py-6">
+  <footer class="bg-gray-900 dark:bg-gray-600 text-white text-center py-6">
     <p>© <script>document.write(new Date().getFullYear())</script> PosTech. Haki Zote Zimehifadhiwa.</p>
   </footer>
 
+  <script src="/JavaScript/responsive.js"></script>
+
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-  <script src="script.js"></script>
+  <script src="/JavaScript/script.js"></script>
 </body>
 </html>
