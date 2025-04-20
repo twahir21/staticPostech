@@ -16,7 +16,7 @@
     submitBtn.disabled = true;
 
     try {
-      const response = await fetch('http://localhost:3000/sendMail', {
+      const response = await fetch('https://postech-backend.onrender.com/sendMail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, message }),
