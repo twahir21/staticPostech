@@ -1,25 +1,23 @@
-document.addEventListener("load", async () => {
-    const start = Date.now();
+// warmServer.js
 
-    try {
-        const request = await fetch("https://api.mypostech.store/", {
-            credentials: 'include',
-            headers: {
-                'Accept-Language': "sw"
-            }
-        });
+console.log("⏱️ Warm-up script loaded");
 
-        const data = await request.json();
-
-        if (!request.ok || !data.success) {
-            console.error(data.message || "Seva imeshindwa kuleta majibu mazuri")
-        }
-
-        console.log(data);
-        console.log("⏱️ Warm-up took:", Date.now() - start, "ms");
-
-    } catch (err) {
-        const res = err instanceof Error ? err.message : "Seva imezingua";
-        console.error(res);
-    }
-});
+fetch("https://api.mypostech.store/", {
+  method: "GET",
+  mode: "cors",
+  credentials: "include",
+  headers: {
+    "Accept-Language": "sw"
+  }
+})
+  .then(res => {
+    console.log("📡 Fetched warm-up endpoint");
+    return res.json();
+  })
+  .then(data => {
+    console.log("✅ Server response:", data);
+  })
+  .catch(err => {
+    const msg = err.message || "Unknown";
+    console.warn("⚠️ Warm-up failed:", msg);
+  });
